@@ -12,7 +12,7 @@
 
 - name: LightHouse | Get distrib git rpm
   ansible.builtin.get_url:
-    url: "https://packages.endpointdev.com/rhel/7/os/x86_64/git-{{ git_version }}-1.ep7.x86_64.rpm"
+    url: "http://mirror.centos.org/centos/7/os/x86_64/Packages/git-1.8.3.1-23.el7_8.x86_64.rpm"
     dest: ./git.rpm
   register: result
   timeout: 60
