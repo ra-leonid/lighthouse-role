@@ -1,0 +1,8 @@
+---
+- name: LightHouse | Install rpm package
+  become: true
+  ansible.builtin.yum:
+    name:
+      - git.rpm
+      - nginx.rpm
+  notify: Start nginx service

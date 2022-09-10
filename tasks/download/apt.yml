@@ -1,0 +1,20 @@
+---
+- name: LightHouse | Get distrib nginx deb
+  ansible.builtin.get_url:
+    url: "https://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx-dbg_{{ nginx_version }}-1~{{ansible_distribution_release.codename}}_amd64.deb"
+    dest: nginx.deb
+    mode: 0755
+  check_mode: false
+  register: result
+  timeout: 60
+  until: result is succeeded
+  retries: 10
+
+- name: LightHouse | Get distrib git deb
+  ansible.builtin.get_url:
+    url: "http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_{{ git_version }}-1ubuntu1_amd64.deb"
+    dest: git.deb
+  register: result
+  timeout: 60
+  until: result is succeeded
+  retries: 10

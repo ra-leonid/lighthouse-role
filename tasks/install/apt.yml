@@ -1,0 +1,8 @@
+---
+- name: LightHouse | Install deb package
+  become: true
+  ansible.builtin.apt:
+    deb:
+      - git.deb
+      - nginx.deb
+  notify: Start nginx service
