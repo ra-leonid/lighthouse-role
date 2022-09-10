@@ -13,7 +13,7 @@
     single_branch: true
     version: master
   notify: Start nginx service
-  
+
 - name: LightHouse | Configure nginx
   become: true
   ansible.builtin.template:
@@ -21,4 +21,3 @@
     dest: /etc/nginx/conf.d/default.conf
     mode: 0644
   notify: Start nginx service
-

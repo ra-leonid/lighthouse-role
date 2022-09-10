@@ -1,7 +1,7 @@
 ---
 - name: LightHouse | Get distrib nginx deb
   ansible.builtin.get_url:
-    url: "https://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx-dbg_{{ nginx_version }}-1~{{ansible_distribution_release.codename}}_amd64.deb"
+    url: "https://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx-dbg_{{ nginx_version }}-1~{{ ansible_distribution_release.codename }}_amd64.deb"
     dest: ./nginx.deb
     mode: 0755
   check_mode: false
