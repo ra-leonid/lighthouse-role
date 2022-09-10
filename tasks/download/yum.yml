@@ -2,7 +2,7 @@
 - name: LightHouse | Get distrib nginx rpm
   ansible.builtin.get_url:
     url: "https://nginx.org/packages/centos/7/x86_64/RPMS/-{{ nginx_version }}-1.el7.ngx.x86_64.rpm"
-    dest: nginx.rpm
+    dest: ./nginx.rpm
     mode: 0755
   check_mode: false
   register: result
@@ -13,7 +13,7 @@
 - name: LightHouse | Get distrib git rpm
   ansible.builtin.get_url:
     url: "https://packages.endpointdev.com/rhel/7/os/x86_64/git-{{ git_version }}-1.ep7.x86_64.rpm"
-    dest: git.rpm
+    dest: ./git.rpm
   register: result
   timeout: 60
   until: result is succeeded
