@@ -1,7 +1,7 @@
 ---
 - name: LightHouse | Get distrib nginx rpm
   ansible.builtin.get_url:
-    url: "https://nginx.org/packages/centos/7/x86_64/RPMS/-{{ nginx_version }}-1.el7.ngx.x86_64.rpm"
+    url: "https://nginx.org/packages/centos/7/x86_64/RPMS/nginx-{{ nginx_version }}-1.el7.ngx.x86_64.rpm"
     dest: ./nginx.rpm
     mode: 0755
   check_mode: false
